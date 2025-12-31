@@ -1,967 +1,1032 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBS Xpress Cargo - Reliable Logistics Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        :root {
-            --primary: #0056a6;
-            --secondary: #ff6b00;
-            --dark: #333;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            color: var(--dark);
-            background-color: #fff;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #e05e00;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-        }
-        
-        .btn-primary:hover {
-            background-color: #004a8f;
-        }
-        
-        h1, h2, h3, h4 {
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        h2:after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0;
-            color: var(--primary);
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1601933470096-0e34634ffcde?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 180px 0 120px;
-            margin-top: 80px;
-        }
-        
-        .hero h1 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 3.2rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-icon {
-            background-color: var(--primary);
-            color: white;
-            font-size: 2.5rem;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .service-content {
-            padding: 25px;
-        }
-        
-        .service-content h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Blog Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .blog-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .blog-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .blog-card:hover .blog-image img {
-            transform: scale(1.05);
-        }
-        
-        .blog-content {
-            padding: 25px;
-        }
-        
-        .blog-content h3 {
-            margin-bottom: 10px;
-        }
-        
-        .blog-meta {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        .read-more {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .contact-form-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .contact-info {
-            background-color: var(--primary);
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
-        
-        .contact-info h3 {
-            color: white;
-            margin-bottom: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .contact-icon {
-            background-color: rgba(255, 255, 255, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: #ddd;
-            padding: 70px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-        
-        /* Page Specific */
-        .page-header {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 100px 0 60px;
-            margin-top: 80px;
-        }
-        
-        .page-header h1 {
-            color: white;
-            margin-bottom: 10px;
-        }
-        
-        .page-content {
-            padding: 80px 0;
-        }
-        
-        /* Tabs for Services */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .tab {
-            padding: 15px 30px;
-            background: none;
-            border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray);
-            cursor: pointer;
-            position: relative;
-        }
-        
-        .tab.active {
-            color: var(--primary);
-        }
-        
-        .tab.active:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary);
-            bottom: -1px;
-            left: 0;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.4rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .hero {
-                padding: 150px 0 100px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all 0.3s ease;
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero {
-                padding: 120px 0 80px;
-            }
-            
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBS Xpress Cargo- Reliable Logistics Solutions</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/png">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>SBS <span>Xpress</span> Cargo</h1>
-            </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Reliable Logistics & Cargo Solutions</h1>
-            <p>We provide fast, secure, and reliable cargo services across India and beyond. With our extensive network and advanced tracking systems, your shipments are always in safe hands.</p>
-            <div class="hero-buttons">
-                <a href="#track" class="btn">Track Consignment</a>
-                <a href="#contact" class="btn btn-primary">Request Pickup</a>
-            </div>
-        </div>
-    </section>
+<body id="top">
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Express Delivery</h3>
-                        <p>Time-sensitive delivery solutions for urgent shipments with guaranteed on-time delivery across our network.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-warehouse"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Warehousing</h3>
-                        <p>Secure storage solutions with inventory management, order fulfillment, and distribution services.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe-asia"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>International Shipping</h3>
-                        <p>Comprehensive global logistics solutions with customs clearance and door-to-door delivery.</p>
-                        <a href="#" class="btn">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- 
+    - #HEADER
+  -->
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Your Trusted Logistics Partner</h3>
-                    <p>SBS Xpress Cargo has been providing reliable logistics solutions for over 15 years. We specialize in domestic and international cargo services with a focus on security, speed, and customer satisfaction.</p>
-                    <p>Our mission is to deliver excellence in logistics through innovation, technology, and dedicated customer service. We are committed to providing sustainable logistics solutions that connect businesses and people across the globe.</p>
-                    <a href="mission.html" class="btn btn-primary">Our Mission</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="SBS Xpress Cargo Warehouse">
-                </div>
-            </div>
-        </div>
-    </section>
+  <header class="header" data-header>
+    <div class="container">
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2>Latest Blog Posts</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1562887189-e5d078343de4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Logistics Technology">
-                    </div>
-                    <div class="blog-content">
-                        <h3>How Technology is Transforming Logistics</h3>
-                        <div class="blog-meta">
-                            <i class="far fa-calendar"></i> May 15, 2023 | <i class="far fa-folder"></i> Industry News
-                        </div>
-                        <p>Discover how AI, IoT, and blockchain are revolutionizing the logistics industry and improving supply chain efficiency.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Sustainable Logistics">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Sustainable Logistics Practices</h3>
-                        <div class="blog-meta">
-                            <i class="far fa-calendar"></i> April 28, 2023 | <i class="far fa-folder"></i> Sustainability
-                        </div>
-                        <p>Learn about eco-friendly logistics solutions and how companies are reducing their carbon footprint in transportation.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://images.unsplash.com/photo-1590691565924-90d0b36110b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Packaging Tips">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Essential Packaging Tips for Safe Shipping</h3>
-                        <div class="blog-meta">
-                            <i class="far fa-calendar"></i> March 10, 2023 | <i class="far fa-folder"></i> Tips & Guides
-                        </div>
-                        <p>Protect your shipments with these expert packaging tips to ensure your items arrive safely at their destination.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <h1>
+        <a href="#" class="logo">SBS Xpress Cargo</a>
+      </h1>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-form-container">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Required</label>
-                            <select id="service">
-                                <option value="">Select a Service</option>
-                                <option value="express">Express Delivery</option>
-                                <option value="warehouse">Warehousing</option>
-                                <option value="international">International Shipping</option>
-                                <option value="pickup">Pickup Request</option>
-                                <option value="tracking">Consignment Tracking</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Our Office</h4>
-                            <p>123 Logistics Park, Industrial Area<br>Mumbai, Maharashtra 400072</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Phone Number</h4>
-                            <p>+91 22 1234 5678</p>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email Address</h4>
-                            <p>info@sbsxpresscargo.com</p>
-                            <p>support@sbsxpresscargo.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-file-invoice"></i>
-                        </div>
-                        <div>
-                            <h4>GST Number</h4>
-                            <p>27AAACS1234M1Z5</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <nav class="navbar" data-navbar>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>SBS Xpress Cargo</h3>
-                    <p>Reliable logistics solutions for domestic and international shipments. Fast, secure, and efficient cargo services.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Express Delivery</a></li>
-                        <li><a href="#">Warehousing</a></li>
-                        <li><a href="#">International Shipping</a></li>
-                        <li><a href="#">Supply Chain Solutions</a></li>
-                        <li><a href="#">Customs Clearance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Customer Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#track">Track Consignment</a></li>
-                        <li><a href="#contact">Pickup Request</a></li>
-                        <li><a href="#login">Login / Register</a></li>
-                        <li><a href="#">Download Rate Card</a></li>
-                        <li><a href="#">FAQ & Support</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 SBS Xpress Cargo. All Rights Reserved. | GST No: 27AAACS1234M1Z5</p>
-            </div>
-        </div>
-    </footer>
+        <div class="navbar-top">
+          <a href="#" class="logo">SBS Xpress Cargo</a>
 
-    <!-- Track Consignment Modal -->
-    <div id="trackModal" class="modal" style="display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
-        <div style="background-color: white; margin: 10% auto; padding: 30px; width: 90%; max-width: 500px; border-radius: 8px; position: relative;">
-            <span class="close-modal" style="position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer;">&times;</span>
-            <h3>Track Your Consignment</h3>
-            <div class="form-group">
-                <label for="trackingNumber">Tracking Number</label>
-                <input type="text" id="trackingNumber" placeholder="Enter your tracking number">
-            </div>
-            <button id="trackSubmit" class="btn btn-primary">Track Now</button>
-            <div id="trackingResult" style="margin-top: 20px; display: none;">
-                <h4>Tracking Details</h4>
-                <div id="trackingStatus" style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 10px;">
-                    <!-- Tracking details will appear here -->
-                </div>
-            </div>
+          <button class="nav-close-btn" aria-label="Clsoe menu" data-nav-toggler>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
         </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>
+              <span>Home</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>
+              <span>About</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#service" class="navbar-link" data-nav-link>
+              <span>Service</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-nav-link>
+              <span>Blog</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>
+              <span>Contact</span>
+
+              <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-contact">
+
+        <div>
+          <p class="contact-label">Free Call In India</p>
+
+          <a href="tel:12345678910" class="contact-number">+91 8433667514</a>
+        </div>
+
+        <div class="contact-icon">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+
+      </div>
+
+      <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
     </div>
+  </header>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Contact Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-        
-        // Track Consignment
-        document.querySelectorAll('a[href="#track"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('trackModal').style.display = 'block';
-            });
-        });
-        
-        // Close modal
-        document.querySelector('.close-modal').addEventListener('click', function() {
-            document.getElementById('trackModal').style.display = 'none';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(e) {
-            if (e.target == document.getElementById('trackModal')) {
-                document.getElementById('trackModal').style.display = 'none';
-            }
-        });
-        
-        // Track submission
-        document.getElementById('trackSubmit').addEventListener('click', function() {
-            const trackingNumber = document.getElementById('trackingNumber').value;
-            const trackingResult = document.getElementById('trackingResult');
-            const trackingStatus = document.getElementById('trackingStatus');
-            
-            if (!trackingNumber) {
-                alert('Please enter a tracking number');
-                return;
-            }
-            
-            // Simulate tracking result
-            trackingStatus.innerHTML = `
-                <p><strong>Tracking Number:</strong> ${trackingNumber}</p>
-                <p><strong>Status:</strong> In Transit</p>
-                <p><strong>Last Update:</strong> ${new Date().toLocaleDateString()} - Package departed from Mumbai hub</p>
-                <p><strong>Estimated Delivery:</strong> ${new Date(Date.now() + 3*24*60*60*1000).toLocaleDateString()}</p>
-                <p><strong>Destination:</strong> Delhi</p>
-            `;
-            
-            trackingResult.style.display = 'block';
-        });
-        
-        // Login Request
-        document.querySelectorAll('a[href="#login"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const email = prompt('Please enter your email to request login credentials:');
-                if (email) {
-                    alert(`Login credentials request received for ${email}. Our team will contact you shortly.`);
-                }
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#') return;
-                
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#track' || targetId === '#login') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="home" id="home"
+        style="background-image: url('./assets/images/hero-banner.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h2 class="h1 hero-title">
+              <span class="span">To Every</span> Direction
+            </h2>
+
+            <p class="hero-text">
+              Driven by Speed, Powered by Trust
+            </p>
+
+            <a href="#service" class="btn-outline">View Services</a>
+
+            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
+              class="hero-shape shape-1">
+
+            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
+              class="hero-shape shape-2">
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner img-holder" style="--width: 400; --height: 720;">
+            <img src="./assets/images/about-banner.jpg" width="400" height="720" loading="lazy" alt=""
+              class="img-cover">
+
+            <img src="./assets/images/about-shape-1.png" width="260" height="170" loading="lazy" alt=""
+              class="abs-img abs-img-1">
+
+            <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt=""
+              class="abs-img abs-img-2">
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">Why Choose Us</p>
+
+            <h2 class="h2 section-title">We Are Professional Logistics & cargo Agency</h2>
+
+            <p class="section-text">
+              Sed ut perspiciatis unde omnis iste natus error volup tatem accusantium dolorem que laudantium, totam
+              inventore.
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Go beyond logistics, make the world go round and revolutionize business.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Logistics through innovation, dedication, and technology. ready, set, done.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  We take pride in serving our customers safely. together with passion.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Imagination what we can easily see is only a small percentage.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  Quality never goes out of style. safety, quality, professionalism.
+                </p>
+              </li>
+
+              <li class="about-item">
+                <div class="about-icon">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+
+                <p class="about-text">
+                  The quality shows in every move we make where business lives.
+                </p>
+              </li>
+
+            </ul>
+
+            <a href="#" class="btn">Learn More</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" id="service" aria-label="service">
+        <div class="container">
+
+          <p class="section-subtitle">All Services</p>
+
+          <h2 class="h2 section-title">Trusted For Our Services</h2>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever since
+            the when an
+            printer took.
+          </p>
+
+          <ul class="service-list grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">01</span> Air Freight
+                </h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                </p>
+
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                  <span class="span">View Detail</span>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-2.png" width="74" height="60" loading="lazy" alt="Ship">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">02</span> Road Freight
+                </h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                </p>
+
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                  <span class="span">View Detail</span>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-3.png" width="60" height="60" loading="lazy" alt="Airplane">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">03</span> Ocean Freight
+                </h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                </p>
+
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                  <span class="span">View Detail</span>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-4.png" width="50" height="60" loading="lazy" alt="Train">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">04</span> Rail Freight
+                </h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                </p>
+
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                  <span class="span">View Detail</span>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-5.png" width="63" height="60" loading="lazy" alt="Trolley">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">05</span> Warehousing
+                </h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                </p>
+
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                  <span class="span">View Detail</span>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/service-icon-6.png" width="46" height="60" loading="lazy" alt="Paper">
+                </div>
+
+                <h3 class="h3 card-title">
+                  <span class="span">06</span> Project Cargo
+                </h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                </p>
+
+                <a href="#" class="btn-link">
+                  <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                  <span class="span">View Detail</span>
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURE
+      -->
+
+      <section class="section feature" aria-label="feature">
+        <div class="container">
+
+          <div class="title-wrapper">
+
+            <div>
+              <p class="section-subtitle">Estimation</p>
+
+              <h2 class="h2 section-title">Has a wide range of solutions</h2>
+
+              <p class="section-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever
+                since the when an
+                printer took.
+              </p>
+            </div>
+
+            <a href="#" class="btn">Read More</a>
+
+          </div>
+
+          <ul class="feature-list grid-list">
+
+            <li>
+              <div class="feature-card" style="--card-number: '01'">
+
+                <div class="card-icon">
+                  <img src="./assets/images/feature-icon-1.png" width="72" height="91" alt="">
+                </div>
+
+                <h3 class="h3 card-title">Solutions and specialized</h3>
+
+                <p class="card-text">
+                  Our aim is to optimize and improve your supply chain so that we can give you the best service
+                </p>
+
+                <a href="#" class="card-btn" aria-label="Read more">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="feature-card" style="--card-number: '02'">
+
+                <div class="card-icon">
+                  <img src="./assets/images/feature-icon-2.png" width="94" height="94" alt="">
+                </div>
+
+                <h3 class="h3 card-title">Multiple warehouses</h3>
+
+                <p class="card-text">
+                  We provide multiple drop off and pickup locations so you don't have to worry. And you should not face
+                  any kind...
+                </p>
+
+                <a href="#" class="card-btn" aria-label="Read more">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="feature-card" style="--card-number: '03'">
+
+                <div class="card-icon">
+                  <img src="./assets/images/feature-icon-3.png" width="93" height="93" alt="">
+                </div>
+
+                <h3 class="h3 card-title">Tracking made easy</h3>
+
+                <p class="card-text">
+                  A tracking number for the entire process. so that you can find the exact position. this process will
+                  help you
+                </p>
+
+                <a href="#" class="card-btn" aria-label="Read more">
+                  <ion-icon name="arrow-forward"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PROJECT
+      -->
+
+      <section class="section project" aria-label="project">
+        <div class="container">
+
+          <p class="section-subtitle">Projects</p>
+
+          <h2 class="h2 section-title">Featured Projects</h2>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever since
+            the when an
+            printer took.
+          </p>
+
+          <ul class="project-list">
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-1.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Warehousing , Distrbution</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Warehouse inventory</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Read More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-2.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Logistics, Analytics</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Read More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-3.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Warehousing , Distrbution</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Warehouse inventory</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Read More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-4.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Logistics, Analytics</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Read More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-5.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Warehousing , Distrbution</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Warehouse inventory</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Read More</a>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="project-item">
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
+                  <img src="./assets/images/project-6.jpg" width="397" height="352" loading="lazy"
+                    alt="Warehouse inventory" class="img-cover">
+                </figure>
+
+                <button class="action-btn" aria-label="View image">
+                  <ion-icon name="expand-outline"></ion-icon>
+                </button>
+
+                <div class="card-content">
+                  <p class="card-tag">Logistics, Analytics</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                  </h3>
+
+                  <a href="#" class="card-link">Read More</a>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" aria-label="blog" id="blog">
+        <div class="container">
+
+          <p class="section-subtitle">Our Blogs</p>
+
+          <h2 class="h2 section-title">Recent news & events</h2>
+
+          <p class="section-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever since
+            the when an
+            printer took.
+          </p>
+
+          <ul class="blog-list grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                  <img src="./assets/images/blog-1.jpg" width="770" height="500" loading="lazy"
+                    alt="At the end of the day, going forward, a new normal that has evolved from. your only logistic partner."
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="card-meta" datetime="2022-08-02">
+                    <span class="span">02</span> Aug
+                  </time>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">
+                      At the end of the day, going forward, a new normal that has evolved from. your only logistic
+                      partner.
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit. typesetting
+                    industry the standard
+                    dummy text ever since the when an printer.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                    <span class="span">Read More</span>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
+                  <img src="./assets/images/blog-2.jpg" width="770" height="500" loading="lazy"
+                    alt="Going forward, a new normal that has evolved from generation. moving your products across all borders."
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="card-meta" datetime="2022-08-21">
+                    <span class="span">21</span> Aug
+                  </time>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">
+                      Going forward, a new normal that has evolved from generation. moving your products across all
+                      borders.
+                    </a>
+                  </h3>
+
+                  <p class="card-text">
+                    New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit. typesetting
+                    industry the standard
+                    dummy text ever since the when an printer.
+                  </p>
+
+                  <a href="#" class="btn-link">
+                    <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                    <span class="span">Read More</span>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <section class="section newsletter" aria-label="newsletter">
+        <div class="container">
+
+          <figure class="newsletter-banner img-holder">
+            <img src="./assets/images/newsletter-banner.png" width="303" height="381" alt="newsletter banner"
+              class="w-100">
+          </figure>
+
+          <div class="newsletter-content">
+
+            <h2 class="h2 section-title">Subscribe for offers and news</h2>
+
+            <form action="" class="newsletter-form">
+              <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="email"
+                class="email-field">
+
+              <button type="submit" class="newsletter-btn">Subscribe Now</button>
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top section">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">SBS Xpress Cargo</a>
+
+          <p class="footer-text">
+            Many desktop publishing packages and web page editors now use are dolra Ipsum as their default.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Quick Links</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Services</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Warehouse</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Air Freight</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Ocean Freight</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Road Freight</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Packaging</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Community</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Business Consulting</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Testimonials</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Track Your Shipment</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Condition</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2025 SBS Xpress Cargo. All Rights Reserved by <a href="#" class="copyright-link">Nikhil Rathaur</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
