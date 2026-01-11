@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | SBS Xpress Cargo</title>
     <!-- Icons and Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/png">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
     <!-- About Us Page Specific Styles -->
     <style>
         /* About Us Page Specific Styles */
@@ -32,7 +39,8 @@
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
-        header{
+
+        header {
             background-color: var(--dark-orange);
         }
 
@@ -68,7 +76,8 @@
             align-items: center;
             color: white;
             text-align: center;
-            margin-top: 80px; /* Offset for fixed header */
+            margin-top: 80px;
+            /* Offset for fixed header */
         }
 
         .about-hero-content {
@@ -183,7 +192,8 @@
             gap: 40px;
         }
 
-        .mission-box, .vision-box {
+        .mission-box,
+        .vision-box {
             padding: 40px;
             background-color: white;
             border-radius: 10px;
@@ -191,24 +201,28 @@
             transition: var(--transition);
         }
 
-        .mission-box:hover, .vision-box:hover {
+        .mission-box:hover,
+        .vision-box:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
         }
 
-        .mission-box i, .vision-box i {
+        .mission-box i,
+        .vision-box i {
             font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
 
-        .mission-box h3, .vision-box h3 {
+        .mission-box h3,
+        .vision-box h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             font-family: 'Oswald', sans-serif;
         }
 
-        .mission-box p, .vision-box p {
+        .mission-box p,
+        .vision-box p {
             color: var(--gray-color);
             font-family: 'Rubik', sans-serif;
         }
@@ -471,39 +485,40 @@
             .about-intro {
                 grid-template-columns: 1fr;
             }
-            
+
             .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .values-container, .team-container {
+
+            .values-container,
+            .team-container {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .timeline::before {
                 left: 30px;
             }
-            
+
             .timeline-item {
                 width: 100%;
                 padding-right: 0;
                 padding-left: 70px;
             }
-            
+
             .timeline-item:nth-child(even) {
                 margin-left: 0;
                 padding-left: 70px;
             }
-            
+
             .timeline-year {
                 left: 0;
                 right: auto;
             }
-            
+
             .timeline-item:nth-child(even) .timeline-year {
                 left: 0;
             }
-            
+
             .timeline-content::before {
                 display: none;
             }
@@ -513,19 +528,20 @@
             .about-hero h1 {
                 font-size: 2.8rem;
             }
-            
+
             .about-hero {
                 height: 60vh;
             }
-            
+
             .mission-vision {
                 grid-template-columns: 1fr;
             }
-            
-            .values-container, .team-container {
+
+            .values-container,
+            .team-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-intro-content h2,
             .text-center h2 {
                 font-size: 2rem;
@@ -536,21 +552,23 @@
             .stats {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-page-section {
                 padding: 60px 0;
             }
-            
+
             .cta-section {
                 padding: 60px 0;
             }
-            
-            .mission-box, .vision-box {
+
+            .mission-box,
+            .vision-box {
                 padding: 30px 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Your Original Header -->
     <header class="header" data-header>
@@ -639,7 +657,8 @@
     <section class="about-hero">
         <div class="about-hero-content">
             <h1>Our Journey in Transportation</h1>
-            <p>For over two decades, SBS Xpress Cargo has been connecting businesses and communities through reliable, efficient, and innovative logistics solutions.</p>
+            <p>For over two decades, SBS Xpress Cargo has been connecting businesses and communities through reliable,
+                efficient, and innovative logistics solutions.</p>
             <a href="#about-intro" class="btn">Discover Our Story</a>
         </div>
     </section>
@@ -649,14 +668,20 @@
         <div class="about-container">
             <div class="about-intro">
                 <div class="about-intro-img">
-                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="SBS Xpress Cargo Team">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="SBS Xpress Cargo Team">
                 </div>
                 <div class="about-intro-content">
                     <h2>Who We Are</h2>
-                    <p>Founded in 2001, SBS Xpress Cargo has grown from a local cargo company into a nationwide logistics powerhouse. Our commitment to excellence, safety, and customer satisfaction has been the driving force behind our success.</p>
-                    <p>With a dedicated team of professionals and an extensive network across India, we deliver solutions that keep businesses moving. Our team works around the clock to ensure your shipments arrive on time, every time.</p>
-                    <p>We believe in sustainable growth and have invested in eco-friendly technologies, making us a leader in responsible transportation solutions.</p>
-                    
+                    <p>Founded in 2001, SBS Xpress Cargo has grown from a local cargo company into a nationwide
+                        logistics powerhouse. Our commitment to excellence, safety, and customer satisfaction has been
+                        the driving force behind our success.</p>
+                    <p>With a dedicated team of professionals and an extensive network across India, we deliver
+                        solutions that keep businesses moving. Our team works around the clock to ensure your shipments
+                        arrive on time, every time.</p>
+                    <p>We believe in sustainable growth and have invested in eco-friendly technologies, making us a
+                        leader in responsible transportation solutions.</p>
+
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number" data-count="22">0</div>
@@ -687,15 +712,21 @@
                 <div class="mission-box">
                     <i class="fas fa-bullseye"></i>
                     <h3>Our Mission</h3>
-                    <p>To provide innovative, reliable, and sustainable transportation solutions that exceed customer expectations while maintaining the highest standards of safety, efficiency, and environmental responsibility.</p>
-                    <p>We are committed to building lasting partnerships with our clients by understanding their unique logistics needs and delivering customized solutions that drive their success.</p>
+                    <p>To provide innovative, reliable, and sustainable transportation solutions that exceed customer
+                        expectations while maintaining the highest standards of safety, efficiency, and environmental
+                        responsibility.</p>
+                    <p>We are committed to building lasting partnerships with our clients by understanding their unique
+                        logistics needs and delivering customized solutions that drive their success.</p>
                 </div>
-                
+
                 <div class="vision-box">
                     <i class="fas fa-eye"></i>
                     <h3>Our Vision</h3>
-                    <p>To be the most trusted and technologically advanced transportation company in India, setting new standards for excellence in logistics and supply chain management.</p>
-                    <p>We envision a future where goods move seamlessly across the country, powered by sustainable practices and cutting-edge technology that benefits businesses, communities, and the environment.</p>
+                    <p>To be the most trusted and technologically advanced transportation company in India, setting new
+                        standards for excellence in logistics and supply chain management.</p>
+                    <p>We envision a future where goods move seamlessly across the country, powered by sustainable
+                        practices and cutting-edge technology that benefits businesses, communities, and the
+                        environment.</p>
                 </div>
             </div>
         </div>
@@ -708,7 +739,7 @@
                 <h2>Our Core Values</h2>
                 <p>These principles guide everything we do at SBS Xpress Cargo</p>
             </div>
-            
+
             <div class="values-container">
                 <div class="value-card">
                     <div class="value-icon">
@@ -717,7 +748,7 @@
                     <h3>Safety First</h3>
                     <p>We prioritize the safety of our team, customers, and the communities we serve above all else.</p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-handshake"></i>
@@ -725,7 +756,7 @@
                     <h3>Integrity</h3>
                     <p>We conduct our business with honesty, transparency, and respect for all stakeholders.</p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-lightbulb"></i>
@@ -733,7 +764,7 @@
                     <h3>Innovation</h3>
                     <p>We continuously seek new technologies and methods to improve our services and efficiency.</p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-users"></i>
@@ -741,7 +772,7 @@
                     <h3>Teamwork</h3>
                     <p>We believe in collaboration and mutual support to achieve our common goals.</p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-leaf"></i>
@@ -749,7 +780,7 @@
                     <h3>Sustainability</h3>
                     <p>We're committed to reducing our environmental impact through eco-friendly practices.</p>
                 </div>
-                
+
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-trophy"></i>
@@ -768,16 +799,17 @@
                 <h2>Our Journey</h2>
                 <p>Milestones in our growth and development</p>
             </div>
-            
+
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-year">2001</div>
                     <div class="timeline-content">
                         <h3>Company Founded</h3>
-                        <p>SBS Xpress Cargo was founded with a vision to provide reliable cargo services across India.</p>
+                        <p>SBS Xpress Cargo was founded with a vision to provide reliable cargo services across India.
+                        </p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-year">2008</div>
                     <div class="timeline-content">
@@ -785,7 +817,7 @@
                         <p>Expanded operations to cover multiple states across Northern India.</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-year">2014</div>
                     <div class="timeline-content">
@@ -793,23 +825,25 @@
                         <p>Launched pan-India services, establishing a nationwide logistics network.</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-year">2018</div>
                     <div class="timeline-content">
                         <h3>Technology Integration</h3>
-                        <p>Implemented advanced tracking systems and logistics software for real-time shipment monitoring.</p>
+                        <p>Implemented advanced tracking systems and logistics software for real-time shipment
+                            monitoring.</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-year">2021</div>
                     <div class="timeline-content">
                         <h3>Sustainability Initiative</h3>
-                        <p>Launched our green initiative program, introducing eco-friendly practices in transportation.</p>
+                        <p>Launched our green initiative program, introducing eco-friendly practices in transportation.
+                        </p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-year">2023</div>
                     <div class="timeline-content">
@@ -828,11 +862,12 @@
                 <h2>Meet Our Leadership</h2>
                 <p>The experienced professionals guiding our company forward</p>
             </div>
-            
+
             <div class="team-container">
                 <div class="team-member">
                     <div class="team-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="CEO">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+                            alt="CEO">
                     </div>
                     <div class="team-info">
                         <h4>Rajesh Sharma</h4>
@@ -843,10 +878,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="team-member">
                     <div class="team-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="COO">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80"
+                            alt="COO">
                     </div>
                     <div class="team-info">
                         <h4>Priya Singh</h4>
@@ -857,10 +893,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="team-member">
                     <div class="team-img">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="CTO">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                            alt="CTO">
                     </div>
                     <div class="team-info">
                         <h4>Amit Verma</h4>
@@ -871,10 +908,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="team-member">
                     <div class="team-img">
-                        <img src="https://www.atlanticcouncil.org/wp-content/uploads/2021/02/M_Dohle_5-7-15_8860-edited-3.jpg" alt="CSO">
+                        <img src="https://www.atlanticcouncil.org/wp-content/uploads/2021/02/M_Dohle_5-7-15_8860-edited-3.jpg"
+                            alt="CSO">
                     </div>
                     <div class="team-info">
                         <h4>Paul Deseoza</h4>
@@ -893,10 +931,12 @@
     <section class="cta-section">
         <div class="about-container">
             <h2>Ready to Ship With Us?</h2>
-            <p>Join thousands of satisfied customers who trust SBS Xpress Cargo for their logistics needs. Get a free quote today and experience the difference.</p>
+            <p>Join thousands of satisfied customers who trust SBS Xpress Cargo for their logistics needs. Get a free
+                quote today and experience the difference.</p>
             <div>
                 <!-- <a href="contact.html" class="btn">Get Free Quote</a> -->
-                <a href="tel:+918433667514" class="btn btn-outline" style="margin-left: 15px;">Call Now: +91 8433667514</a>
+                <a href="tel:+918433667514" class="btn btn-outline" style="margin-left: 15px;">Call Now: +91
+                    8433667514</a>
             </div>
         </div>
     </section>
@@ -912,19 +952,19 @@
     <!-- Scripts -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+
     <!-- About Page Specific JavaScript -->
     <script>
         // Animated counter for stats
         function animateCounter() {
             const counters = document.querySelectorAll('.stat-number');
             const speed = 200; // Lower number = faster animation
-            
+
             counters.forEach(counter => {
                 const target = +counter.getAttribute('data-count');
                 const count = +counter.innerText;
                 const increment = target / speed;
-                
+
                 if (count < target) {
                     counter.innerText = Math.ceil(count + increment);
                     setTimeout(animateCounter, 1);
@@ -933,12 +973,12 @@
                 }
             });
         }
-        
+
         // Start counter when section is in viewport
         const observerOptions = {
             threshold: 0.5
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -947,20 +987,20 @@
                 }
             });
         }, observerOptions);
-        
+
         const statsSection = document.querySelector('.stats');
         if (statsSection) {
             observer.observe(statsSection);
         }
-        
+
         // Smooth scrolling for anchor links within about page
         document.querySelectorAll('.about-hero-content a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -970,7 +1010,7 @@
                 }
             });
         });
-        
+
         // Mark current page as active in navigation
         document.addEventListener('DOMContentLoaded', () => {
             // Find and mark the about link as active
@@ -978,12 +1018,23 @@
             if (aboutLink) {
                 aboutLink.classList.add('active');
             }
-            
+
             // Remove active class from other links
             document.querySelectorAll('.navbar-link:not([href="about.html"])').forEach(link => {
                 link.classList.remove('active');
             });
         });
     </script>
+    <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+        <ion-icon name="chevron-up"></ion-icon>
+    </a>
+
+    <!-- ionicon link -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- custom js link -->
+    <script src="script.js"></script>
 </body>
+
 </html>
