@@ -5,113 +5,98 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SBS Xpress Cargo- Reliable Logistics Solutions</title>
+  <title>SBS Xpress Cargo - Reliable Logistics Solutions</title>
 
-  <!-- 
-    - favicon
-  -->
+  <!-- favicon -->
   <link rel="shortcut icon" href="./assets/images/logo.png" type="image/png">
 
-  <!-- 
-    - custom css link
-  -->
+  <!-- custom css link -->
   <link rel="stylesheet" href="style.css">
 
-  <!--
-    - google font link
-  -->
+  <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-
-  <!-- 
-    - preload images
-  -->
 </head>
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-
+  <!-- HEADER -->
   <header class="header" data-header>
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">SBS Xpress Cargo</a>
+        <a href="index.html" class="logo">SBS Xpress Cargo</a>
       </h1>
 
+      <!-- Mobile Phone Display -->
+      <div class="mobile-contact">
+        <a href="tel:+918433667514" class="mobile-call-btn" aria-label="Call SBS Xpress Cargo">
+          <ion-icon name="call-outline"></ion-icon>
+        </a>
+      </div>
+
       <nav class="navbar" data-navbar>
-
         <div class="navbar-top">
-          <a href="#" class="logo">SBS Xpress Cargo</a>
-
-          <button class="nav-close-btn" aria-label="Clsoe menu" data-nav-toggler>
+          <a href="index.html" class="logo">SBS Xpress Cargo</a>
+          <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
             <ion-icon name="close-outline"></ion-icon>
           </button>
         </div>
 
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <a href="#home" class="navbar-link" data-nav-link>
+            <a href="index.html" class="navbar-link" data-nav-link>
               <span>Home</span>
-
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
-
           <li class="navbar-item">
-            <a href="#about" class="navbar-link" data-nav-link>
+            <a href="about.html" class="navbar-link" data-nav-link>
               <span>About</span>
-
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
-
           <li class="navbar-item">
-            <a href="#service" class="navbar-link" data-nav-link>
+            <a href="service.html" class="navbar-link" data-nav-link>
               <span>Service</span>
-
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
-
           <li class="navbar-item">
-            <a href="#blog" class="navbar-link" data-nav-link>
+            <a href="blog.html" class="navbar-link" data-nav-link>
               <span>Blog</span>
-
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
-
           <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>
+            <a href="contact.html" class="navbar-link" data-nav-link>
               <span>Contact</span>
-
               <ion-icon name="chevron-forward"></ion-icon>
             </a>
           </li>
-
+          <!-- Mobile Phone in Menu -->
+          <li class="navbar-item mobile-menu-contact">
+            <a href="tel:+918433667514" class="navbar-link phone-link" data-nav-link>
+              <span>Call Us Now</span>
+              <span class="phone-number">+91 8433667514</span>
+              <ion-icon name="call-outline"></ion-icon>
+            </a>
+          </li>
         </ul>
-
       </nav>
 
+      <!-- Desktop Contact -->
       <div class="header-contact">
-
         <div>
           <p class="contact-label">Free Call In India</p>
-
-          <a href="tel:12345678910" class="contact-number">+91 8433667514</a>
+          <a href="tel:+918433667514" class="contact-number">+91 8433667514</a>
         </div>
-
         <div class="contact-icon">
           <ion-icon name="call-outline"></ion-icon>
         </div>
-
       </div>
 
       <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
@@ -119,914 +104,716 @@
       </button>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
-
     </div>
   </header>
 
-
-
-
-
   <main>
     <article>
-
-      <!-- 
-        - #HERO
-      -->
-
+      <!-- HERO -->
       <section class="section hero" aria-label="home" id="home"
         style="background-image: url('./assets/images/hero-banner.jpg')">
         <div class="container">
-
           <div class="hero-content">
-
             <h2 class="h1 hero-title">
               <span class="span">To Every</span> Direction
             </h2>
-
             <p class="hero-text">
               Driven by Speed, Powered by Trust
             </p>
-
-            <a href="#service" class="btn-outline">View Services</a>
-
-            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
-              class="hero-shape shape-1">
-
-            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy"
-              class="hero-shape shape-2">
-
+            <a href="service.html" class="btn-outline">View Services</a>
+            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy" class="hero-shape shape-1">
+            <img src="./assets/images/hero-shape.png" width="116" height="116" loading="lazy" class="hero-shape shape-2">
           </div>
-
         </div>
       </section>
 
+      <!-- Enhanced Slider Section -->
+      <section class="slider-section">
+        <div class="container">
+          <div class="slider-container">
+            <div class="slider-track">
+              <!-- Slide 1 -->
+              <div class="slide active">
+                <img src="./assets/images/slide1.jpg" alt="Global Logistics Network" loading="lazy">
+                <div class="slide-content">
+                  <span class="slide-tag">Express Delivery</span>
+                  <h3 class="slide-title">Worldwide Logistics Solutions</h3>
+                  <p class="slide-text">Connecting continents with seamless supply chain solutions. Your trusted partner for international freight forwarding and customs clearance.</p>
+                </div>
+              </div>
+              
+              <!-- Slide 2 -->
+              <div class="slide">
+                <img src="./assets/images/slide2.jpg" alt="Warehouse Management" loading="lazy">
+                <div class="slide-content">
+                  <span class="slide-tag">Secure Storage</span>
+                  <h3 class="slide-title">Smart Warehousing Solutions</h3>
+                  <p class="slide-text">State-of-the-art facilities with temperature control, advanced security systems, and real-time inventory management.</p>
+                </div>
+              </div>
+              
+              <!-- Slide 3 -->
+              <div class="slide">
+                <img src="./assets/images/slide3.jpg" alt="Cargo Transportation" loading="lazy">
+                <div class="slide-content">
+                  <span class="slide-tag">Multi-Modal</span>
+                  <h3 class="slide-title">End-to-End Supply Chain</h3>
+                  <p class="slide-text">Air, sea, rail, and road transportation integrated for optimal efficiency and cost-effectiveness.</p>
+                </div>
+              </div>
+              
+              <!-- Slide 4 -->
+              <div class="slide">
+                <img src="./assets/images/slide4.jpg" alt="Technology Solutions" loading="lazy">
+                <div class="slide-content">
+                  <span class="slide-tag">Digital Innovation</span>
+                  <h3 class="slide-title">Real-Time Tracking & Analytics</h3>
+                  <p class="slide-text">Advanced technology platform providing complete visibility and predictive analytics for your shipments.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button class="slider-btn prev-btn" aria-label="Previous slide">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button class="slider-btn next-btn" aria-label="Next slide">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="slider-dots">
+              <button class="dot active" aria-label="Go to slide 1"></button>
+              <button class="dot" aria-label="Go to slide 2"></button>
+              <button class="dot" aria-label="Go to slide 3"></button>
+              <button class="dot" aria-label="Go to slide 4"></button>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="slider-progress active"></div>
+          </div>
+          
+          <!-- Logistics Content Highlight -->
+          <div class="logistics-highlight">
+            <h3>Why Choose SBS Xpress Cargo?</h3>
+            <p>Leading the logistics industry with innovative solutions and unparalleled service excellence.</p>
+            
+            <div class="logistics-features">
+              <div class="feature-box">
+                <div class="feature-icon">
+                  <ion-icon name="time-outline"></ion-icon>
+                </div>
+                <h4>24/7 Operations</h4>
+                <p>Round-the-clock service ensuring your shipments move without delays, anytime, anywhere.</p>
+              </div>
+              
+              <div class="feature-box">
+                <div class="feature-icon">
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
+                </div>
+                <h4>Secure Handling</h4>
+                <p>ISO-certified processes with insurance coverage for complete peace of mind.</p>
+              </div>
+              
+              <div class="feature-box">
+                <div class="feature-icon">
+                  <ion-icon name="trending-up-outline"></ion-icon>
+                </div>
+                <h4>Cost Optimization</h4>
+                <p>Intelligent route planning and volume discounts for maximum value delivery.</p>
+              </div>
+              
+              <div class="feature-box">
+                <div class="feature-icon">
+                  <ion-icon name="headset-outline"></ion-icon>
+                </div>
+                <h4>Dedicated Support</h4>
+                <p>Personal logistics managers and multilingual customer service teams.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
+      <!-- ABOUT -->
       <section class="section about" id="about" aria-label="about">
         <div class="container">
-
           <figure class="about-banner img-holder" style="--width: 400; --height: 720;">
-            <img src="./assets/images/about-banner.jpg" width="400" height="720" loading="lazy" alt=""
-              class="img-cover">
-
-            <img src="./assets/images/about-shape-1.png" width="260" height="170" loading="lazy" alt=""
-              class="abs-img abs-img-1">
-
-            <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt=""
-              class="abs-img abs-img-2">
+            <img src="./assets/images/about-banner.jpg" width="400" height="720" loading="lazy" alt="" class="img-cover">
+            <img src="./assets/images/about-shape-1.png" width="260" height="170" loading="lazy" alt="" class="abs-img abs-img-1">
+            <img src="./assets/images/about-shape-2.png" width="500" height="500" loading="lazy" alt="" class="abs-img abs-img-2">
           </figure>
 
           <div class="about-content">
-
             <p class="section-subtitle">Why Choose Us</p>
-
-            <h2 class="h2 section-title">We Are Professional Logistics & cargo Agency</h2>
-
+            <h2 class="h2 section-title">Your Trusted Global Logistics Partner</h2>
             <p class="section-text">
-              Sed ut perspiciatis unde omnis iste natus error volup tatem accusantium dolorem que laudantium, totam
-              inventore.
+              With over 15 years of excellence in logistics and supply chain management, SBS Xpress Cargo delivers innovative solutions that drive business growth and operational efficiency worldwide.
             </p>
 
             <ul class="about-list">
-
               <li class="about-item">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
-                  Go beyond logistics, make the world go round and revolutionize business.
+                  Global network spanning 150+ countries with local expertise in every market.
                 </p>
               </li>
-
               <li class="about-item">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
-                  Logistics through innovation, dedication, and technology. ready, set, done.
+                  Advanced technology platform for real-time tracking and predictive analytics.
                 </p>
               </li>
-
               <li class="about-item">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
-                  We take pride in serving our customers safely. together with passion.
+                  ISO 9001:2015 certified processes ensuring quality and compliance standards.
                 </p>
               </li>
-
               <li class="about-item">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
-                  Imagination what we can easily see is only a small percentage.
+                  Sustainable logistics solutions with carbon footprint optimization.
                 </p>
               </li>
-
               <li class="about-item">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
-                  Quality never goes out of style. safety, quality, professionalism.
+                  Customized solutions for e-commerce, pharmaceuticals, and perishable goods.
                 </p>
               </li>
-
               <li class="about-item">
                 <div class="about-icon">
                   <ion-icon name="chevron-forward"></ion-icon>
                 </div>
-
                 <p class="about-text">
-                  The quality shows in every move we make where business lives.
+                  24/7 multilingual customer support and dedicated logistics managers.
                 </p>
               </li>
-
             </ul>
 
             <a href="#" class="btn">Learn More</a>
-
           </div>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #SERVICE
-      -->
-
+      <!-- SERVICE -->
       <section class="section service" id="service" aria-label="service">
         <div class="container">
-
-          <p class="section-subtitle">All Services</p>
-
-          <h2 class="h2 section-title">Trusted For Our Services</h2>
-
+          <p class="section-subtitle">Our Expertise</p>
+          <h2 class="h2 section-title">Comprehensive Logistics Services</h2>
           <p class="section-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever since
-            the when an
-            printer took.
+            From first-mile pickup to last-mile delivery, we provide integrated logistics solutions designed to meet the evolving needs of modern businesses.
           </p>
 
           <ul class="service-list grid-list">
-
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <img src="./assets/images/service-icon-1.png" width="80" height="60" loading="lazy" alt="Truck">
                 </div>
-
                 <h3 class="h3 card-title">
-                  <span class="span">01</span> Air Freight
+                  <span class="span">01</span> Air Freight Solutions
                 </h3>
-
                 <p class="card-text">
-                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                  Express air cargo services with priority handling, customs clearance, and door-to-door delivery for time-sensitive shipments.
                 </p>
-
                 <a href="#" class="btn-link">
                   <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
                   <span class="span">View Detail</span>
                 </a>
-
               </div>
             </li>
-
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <img src="./assets/images/service-icon-2.png" width="74" height="60" loading="lazy" alt="Ship">
                 </div>
-
                 <h3 class="h3 card-title">
-                  <span class="span">02</span> Road Freight
+                  <span class="span">02</span> Road Transportation
                 </h3>
-
                 <p class="card-text">
-                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                  Nationwide FTL/LTL services with GPS tracking, temperature control options, and specialized equipment for all cargo types.
                 </p>
-
                 <a href="#" class="btn-link">
                   <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
                   <span class="span">View Detail</span>
                 </a>
-
               </div>
             </li>
-
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <img src="./assets/images/service-icon-3.png" width="60" height="60" loading="lazy" alt="Airplane">
                 </div>
-
                 <h3 class="h3 card-title">
                   <span class="span">03</span> Ocean Freight
                 </h3>
-
                 <p class="card-text">
-                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                  Full-container (FCL) and less-than-container (LCL) services with port-to-port and door-to-door options worldwide.
                 </p>
-
                 <a href="#" class="btn-link">
                   <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
                   <span class="span">View Detail</span>
                 </a>
-
               </div>
             </li>
-
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <img src="./assets/images/service-icon-4.png" width="50" height="60" loading="lazy" alt="Train">
                 </div>
-
                 <h3 class="h3 card-title">
-                  <span class="span">04</span> Rail Freight
+                  <span class="span">04</span> Rail Logistics
                 </h3>
-
                 <p class="card-text">
-                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                  Cost-effective rail solutions for bulk commodities and intermodal transportation across continental networks.
                 </p>
-
                 <a href="#" class="btn-link">
                   <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
                   <span class="span">View Detail</span>
                 </a>
-
               </div>
             </li>
-
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <img src="./assets/images/service-icon-5.png" width="63" height="60" loading="lazy" alt="Trolley">
                 </div>
-
                 <h3 class="h3 card-title">
-                  <span class="span">05</span> Warehousing
+                  <span class="span">05</span> Warehousing & Distribution
                 </h3>
-
                 <p class="card-text">
-                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                  Modern facilities with inventory management, order fulfillment, cross-docking, and value-added services.
                 </p>
-
                 <a href="#" class="btn-link">
                   <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
                   <span class="span">View Detail</span>
                 </a>
-
               </div>
             </li>
-
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <img src="./assets/images/service-icon-6.png" width="46" height="60" loading="lazy" alt="Paper">
                 </div>
-
                 <h3 class="h3 card-title">
                   <span class="span">06</span> Project Cargo
                 </h3>
-
                 <p class="card-text">
-                  Our aim is to optimize and improve your supply chain so that we can give you the best service.
+                  Specialized handling for oversized, heavy-lift, and complex project shipments with engineering support.
                 </p>
-
                 <a href="#" class="btn-link">
                   <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
                   <span class="span">View Detail</span>
                 </a>
-
               </div>
             </li>
-
           </ul>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #FEATURE
-      -->
-
+      <!-- FEATURE -->
       <section class="section feature" aria-label="feature">
         <div class="container">
-
           <div class="title-wrapper">
-
             <div>
-              <p class="section-subtitle">Estimation</p>
-
-              <h2 class="h2 section-title">Has a wide range of solutions</h2>
-
+              <p class="section-subtitle">Our Capabilities</p>
+              <h2 class="h2 section-title">End-to-End Supply Chain Solutions</h2>
               <p class="section-text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever
-                since the when an
-                printer took.
+                Leveraging technology, expertise, and global partnerships to deliver seamless logistics experiences that drive business growth and customer satisfaction.
               </p>
             </div>
-
-            <a href="#" class="btn">Read More</a>
-
+            <a href="#" class="btn">View All Services</a>
           </div>
 
           <ul class="feature-list grid-list">
-
             <li>
               <div class="feature-card" style="--card-number: '01'">
-
                 <div class="card-icon">
                   <img src="./assets/images/feature-icon-1.png" width="72" height="91" alt="">
                 </div>
-
-                <h3 class="h3 card-title">Solutions and specialized</h3>
-
+                <h3 class="h3 card-title">Customs & Compliance</h3>
                 <p class="card-text">
-                  Our aim is to optimize and improve your supply chain so that we can give you the best service
+                  Expert customs brokerage and trade compliance services ensuring smooth cross-border movements and regulatory adherence.
                 </p>
-
                 <a href="#" class="card-btn" aria-label="Read more">
                   <ion-icon name="arrow-forward"></ion-icon>
                 </a>
-
               </div>
             </li>
-
             <li>
               <div class="feature-card" style="--card-number: '02'">
-
                 <div class="card-icon">
                   <img src="./assets/images/feature-icon-2.png" width="94" height="94" alt="">
                 </div>
-
-                <h3 class="h3 card-title">Multiple warehouses</h3>
-
+                <h3 class="h3 card-title">Technology Integration</h3>
                 <p class="card-text">
-                  We provide multiple drop off and pickup locations so you don't have to worry. And you should not face
-                  any kind...
+                  API integration, EDI capabilities, and custom dashboard solutions for complete supply chain visibility and control.
                 </p>
-
                 <a href="#" class="card-btn" aria-label="Read more">
                   <ion-icon name="arrow-forward"></ion-icon>
                 </a>
-
               </div>
             </li>
-
             <li>
               <div class="feature-card" style="--card-number: '03'">
-
                 <div class="card-icon">
                   <img src="./assets/images/feature-icon-3.png" width="93" height="93" alt="">
                 </div>
-
-                <h3 class="h3 card-title">Tracking made easy</h3>
-
+                <h3 class="h3 card-title">Risk Management</h3>
                 <p class="card-text">
-                  A tracking number for the entire process. so that you can find the exact position. this process will
-                  help you
+                  Comprehensive cargo insurance, contingency planning, and risk mitigation strategies for business continuity.
                 </p>
-
                 <a href="#" class="card-btn" aria-label="Read more">
                   <ion-icon name="arrow-forward"></ion-icon>
                 </a>
-
               </div>
             </li>
-
           </ul>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #PROJECT
-      -->
-
+      <!-- PROJECT -->
       <section class="section project" aria-label="project">
         <div class="container">
-
-          <p class="section-subtitle">Projects</p>
-
-          <h2 class="h2 section-title">Featured Projects</h2>
-
+          <p class="section-subtitle">Case Studies</p>
+          <h2 class="h2 section-title">Successful Deliveries</h2>
           <p class="section-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever since
-            the when an
-            printer took.
+            Explore how we've helped businesses across industries optimize their supply chains and achieve operational excellence.
           </p>
 
           <ul class="project-list">
-
             <li class="project-item">
               <div class="project-card">
-
                 <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-                  <img src="./assets/images/project-1.jpg" width="397" height="352" loading="lazy"
-                    alt="Warehouse inventory" class="img-cover">
+                  <img src="./assets/images/project-1.jpg" width="397" height="352" loading="lazy" alt="Warehouse inventory" class="img-cover">
                 </figure>
-
                 <button class="action-btn" aria-label="View image">
                   <ion-icon name="expand-outline"></ion-icon>
                 </button>
-
                 <div class="card-content">
-                  <p class="card-tag">Warehousing , Distrbution</p>
-
+                  <p class="card-tag">Pharmaceutical Logistics</p>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Warehouse inventory</a>
+                    <a href="#" class="card-title">Temperature-Controlled Medical Supply Chain</a>
                   </h3>
-
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">Read Case Study</a>
                 </div>
-
               </div>
             </li>
-
             <li class="project-item">
               <div class="project-card">
-
                 <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-                  <img src="./assets/images/project-2.jpg" width="397" height="352" loading="lazy"
-                    alt="Warehouse inventory" class="img-cover">
+                  <img src="./assets/images/project-2.jpg" width="397" height="352" loading="lazy" alt="Warehouse inventory" class="img-cover">
                 </figure>
-
                 <button class="action-btn" aria-label="View image">
                   <ion-icon name="expand-outline"></ion-icon>
                 </button>
-
                 <div class="card-content">
-                  <p class="card-tag">Logistics, Analytics</p>
-
+                  <p class="card-tag">E-commerce Fulfillment</p>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                    <a href="#" class="card-title">Scalable Distribution for Online Retailer</a>
                   </h3>
-
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">Read Case Study</a>
                 </div>
-
               </div>
             </li>
-
             <li class="project-item">
               <div class="project-card">
-
                 <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-                  <img src="./assets/images/project-3.jpg" width="397" height="352" loading="lazy"
-                    alt="Warehouse inventory" class="img-cover">
+                  <img src="./assets/images/project-3.jpg" width="397" height="352" loading="lazy" alt="Warehouse inventory" class="img-cover">
                 </figure>
-
                 <button class="action-btn" aria-label="View image">
                   <ion-icon name="expand-outline"></ion-icon>
                 </button>
-
                 <div class="card-content">
-                  <p class="card-tag">Warehousing , Distrbution</p>
-
+                  <p class="card-tag">Industrial Equipment</p>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Warehouse inventory</a>
+                    <a href="#" class="card-title">Heavy Machinery International Transport</a>
                   </h3>
-
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">Read Case Study</a>
                 </div>
-
               </div>
             </li>
-
             <li class="project-item">
               <div class="project-card">
-
                 <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-                  <img src="./assets/images/project-4.jpg" width="397" height="352" loading="lazy"
-                    alt="Warehouse inventory" class="img-cover">
+                  <img src="./assets/images/project-4.jpg" width="397" height="352" loading="lazy" alt="Warehouse inventory" class="img-cover">
                 </figure>
-
                 <button class="action-btn" aria-label="View image">
                   <ion-icon name="expand-outline"></ion-icon>
                 </button>
-
                 <div class="card-content">
-                  <p class="card-tag">Logistics, Analytics</p>
-
+                  <p class="card-tag">Perishable Goods</p>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                    <a href="#" class="card-title">Cold Chain Solutions for Food Exporter</a>
                   </h3>
-
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">Read Case Study</a>
                 </div>
-
               </div>
             </li>
-
             <li class="project-item">
               <div class="project-card">
-
                 <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-                  <img src="./assets/images/project-5.jpg" width="397" height="352" loading="lazy"
-                    alt="Warehouse inventory" class="img-cover">
+                  <img src="./assets/images/project-5.jpg" width="397" height="352" loading="lazy" alt="Warehouse inventory" class="img-cover">
                 </figure>
-
                 <button class="action-btn" aria-label="View image">
                   <ion-icon name="expand-outline"></ion-icon>
                 </button>
-
                 <div class="card-content">
-                  <p class="card-tag">Warehousing , Distrbution</p>
-
+                  <p class="card-tag">Automotive Parts</p>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Warehouse inventory</a>
+                    <a href="#" class="card-title">Just-in-Time Inventory Management</a>
                   </h3>
-
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">Read Case Study</a>
                 </div>
-
               </div>
             </li>
-
             <li class="project-item">
               <div class="project-card">
-
                 <figure class="card-banner img-holder" style="--width: 397; --height: 352;">
-                  <img src="./assets/images/project-6.jpg" width="397" height="352" loading="lazy"
-                    alt="Warehouse inventory" class="img-cover">
+                  <img src="./assets/images/project-6.jpg" width="397" height="352" loading="lazy" alt="Warehouse inventory" class="img-cover">
                 </figure>
-
                 <button class="action-btn" aria-label="View image">
                   <ion-icon name="expand-outline"></ion-icon>
                 </button>
-
                 <div class="card-content">
-                  <p class="card-tag">Logistics, Analytics</p>
-
+                  <p class="card-tag">Retail Distribution</p>
                   <h3 class="h3">
-                    <a href="#" class="card-title">Minimize Manufacturing</a>
+                    <a href="#" class="card-title">Multi-Channel Retail Logistics Network</a>
                   </h3>
-
-                  <a href="#" class="card-link">Read More</a>
+                  <a href="#" class="card-link">Read Case Study</a>
                 </div>
-
               </div>
             </li>
-
           </ul>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #BLOG
-      -->
-
-      <section class="section blog" aria-label="blog" id="blog">
+      <!-- BLOG -->
+      <section class="section blog" id="blog" aria-label="blog">
         <div class="container">
-
-          <p class="section-subtitle">Our Blogs</p>
-
-          <h2 class="h2 section-title">Recent news & events</h2>
-
+          <p class="section-subtitle">Industry Insights</p>
+          <h2 class="h2 section-title">Latest Logistics Trends</h2>
           <p class="section-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry the standard dummy text ever since
-            the when an
-            printer took.
+            Stay updated with the latest developments in logistics, supply chain innovation, and industry best practices.
           </p>
 
           <ul class="blog-list grid-list">
-
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
                   <img src="./assets/images/blog-1.jpg" width="770" height="500" loading="lazy"
                     alt="At the end of the day, going forward, a new normal that has evolved from. your only logistic partner."
                     class="img-cover">
                 </figure>
-
                 <div class="card-content">
-
-                  <time class="card-meta" datetime="2022-08-02">
-                    <span class="span">02</span> Aug
+                  <time class="card-meta" datetime="2024-03-02">
+                    <span class="span">02</span> Mar
                   </time>
-
                   <h3 class="h3 card-title">
                     <a href="#">
-                      At the end of the day, going forward, a new normal that has evolved from. your only logistic
-                      partner.
+                      The Future of Sustainable Logistics: Green Supply Chain Innovations
                     </a>
                   </h3>
-
                   <p class="card-text">
-                    New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit. typesetting
-                    industry the standard
-                    dummy text ever since the when an printer.
+                    Exploring how carbon-neutral shipping, electric fleets, and circular logistics are transforming the industry while reducing environmental impact.
                   </p>
-
                   <a href="#" class="btn-link">
                     <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
-                    <span class="span">Read More</span>
+                    <span class="span">Read Article</span>
                   </a>
-
                 </div>
-
               </div>
             </li>
-
             <li>
               <div class="blog-card">
-
                 <figure class="card-banner img-holder" style="--width: 770; --height: 500;">
                   <img src="./assets/images/blog-2.jpg" width="770" height="500" loading="lazy"
                     alt="Going forward, a new normal that has evolved from generation. moving your products across all borders."
                     class="img-cover">
                 </figure>
-
                 <div class="card-content">
-
-                  <time class="card-meta" datetime="2022-08-21">
-                    <span class="span">21</span> Aug
+                  <time class="card-meta" datetime="2024-02-21">
+                    <span class="span">21</span> Feb
                   </time>
-
                   <h3 class="h3 card-title">
                     <a href="#">
-                      Going forward, a new normal that has evolved from generation. moving your products across all
-                      borders.
+                      AI in Logistics: Revolutionizing Supply Chain Efficiency
                     </a>
                   </h3>
-
                   <p class="card-text">
-                    New chip traps clusters of migrating tumor cells asperiortenetur, blanditiis odit. typesetting
-                    industry the standard
-                    dummy text ever since the when an printer.
+                    How artificial intelligence and machine learning are optimizing route planning, demand forecasting, and warehouse operations for unprecedented efficiency.
                   </p>
-
                   <a href="#" class="btn-link">
                     <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
-
-                    <span class="span">Read More</span>
+                    <span class="span">Read Article</span>
                   </a>
-
                 </div>
-
               </div>
             </li>
-
           </ul>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #NEWSLETTER
-      -->
-
+      <!-- NEWSLETTER -->
       <section class="section newsletter" aria-label="newsletter">
         <div class="container">
-
           <figure class="newsletter-banner img-holder">
-            <img src="./assets/images/newsletter-banner.png" width="303" height="381" alt="newsletter banner"
-              class="w-100">
+            <img src="./assets/images/newsletter-banner.png" width="303" height="381" alt="newsletter banner" class="w-100">
           </figure>
-
           <div class="newsletter-content">
-
-            <h2 class="h2 section-title">Subscribe for offers and news</h2>
-
+            <h2 class="h2 section-title">Stay Connected with SBS Xpress</h2>
+            <p class="section-text" style="color: white; margin-bottom: 20px;">
+              Subscribe to receive logistics insights, industry updates, and exclusive offers.
+            </p>
             <form action="" class="newsletter-form">
-              <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="email"
-                class="email-field">
-
+              <input type="email" name="email_address" placeholder="Enter Your Email" aria-label="email" class="email-field">
               <button type="submit" class="newsletter-btn">Subscribe Now</button>
             </form>
-
           </div>
-
         </div>
       </section>
-
     </article>
   </main>
 
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
     <div class="container">
-
       <div class="footer-top section">
-
         <div class="footer-brand">
-
           <a href="#" class="logo">SBS Xpress Cargo</a>
-
           <p class="footer-text">
-            Many desktop publishing packages and web page editors now use are dolra Ipsum as their default.
+            Your trusted partner for global logistics solutions. Delivering excellence through innovation, reliability, and customer-focused service since 2009.
           </p>
-
           <ul class="social-list">
-
             <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
-
             <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li>
-
             <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
-
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
             <li>
               <a href="#" class="social-link">
                 <ion-icon name="logo-youtube"></ion-icon>
               </a>
             </li>
-
           </ul>
-
         </div>
 
         <ul class="footer-list">
-
           <li>
             <p class="footer-list-title">Quick Links</p>
           </li>
-
           <li>
-            <a href="#" class="footer-link">About</a>
+            <a href="#about" class="footer-link">About Us</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Services</a>
+            <a href="service.html" class="footer-link">Our Services</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Blog</a>
+            <a href="#blog" class="footer-link">Industry Blog</a>
           </li>
-
           <li>
             <a href="#" class="footer-link">FAQ</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Contact Us</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
           </li>
-
         </ul>
 
         <ul class="footer-list">
-
           <li>
-            <p class="footer-list-title">Services</p>
+            <p class="footer-list-title">Our Services</p>
           </li>
-
-          <li>
-            <a href="#" class="footer-link">Warehouse</a>
-          </li>
-
           <li>
             <a href="#" class="footer-link">Air Freight</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Ocean Freight</a>
+            <a href="#" class="footer-link">Ocean Shipping</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Road Freight</a>
+            <a href="#" class="footer-link">Road Transport</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Packaging</a>
+            <a href="#" class="footer-link">Warehousing</a>
           </li>
-
+          <li>
+            <a href="#" class="footer-link">Customs Clearance</a>
+          </li>
         </ul>
 
         <ul class="footer-list">
-
           <li>
-            <p class="footer-list-title">Community</p>
+            <p class="footer-list-title">Resources</p>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Business Consulting</a>
+            <a href="#" class="footer-link">Track Shipment</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Testimonials</a>
+            <a href="#" class="footer-link">Get Quote</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Track Your Shipment</a>
+            <a href="#" class="footer-link">Industry Reports</a>
           </li>
-
           <li>
             <a href="#" class="footer-link">Privacy Policy</a>
           </li>
-
           <li>
-            <a href="#" class="footer-link">Terms & Condition</a>
+            <a href="#" class="footer-link">Terms & Conditions</a>
           </li>
-
         </ul>
-
       </div>
 
       <div class="footer-bottom">
         <p class="copyright">
-          &copy; 2025 SBS Xpress Cargo. All Rights Reserved by <a href="#" class="copyright-link">Nikhil Rathaur</a>
+          &copy; 2025 SBS Xpress Cargo. All Rights Reserved by <a href="#" class="copyright-link">SBS Logistics Group</a>
+        </p>
+        <p class="copyright" style="margin-top: 10px; font-size: 1.2rem;">
+          Head Office: Logistics Park, Delhi NCR, India | GST: 07AAICS1234M1ZX | IATA: 123-45678
         </p>
       </div>
-
     </div>
   </footer>
 
-
-
-
-
-  <!-- 
-    - #BACK TO TOP
-  -->
-
+  <!-- BACK TO TOP -->
   <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
     <ion-icon name="chevron-up"></ion-icon>
   </a>
 
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="script.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
+  <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  
+  <!-- custom js link -->
+  <script src="script.js"></script>
 </body>
-
 </html>

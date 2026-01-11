@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SBS Xpress Cargo</title>
+
+    <!-- Icons and Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/png">
+
+    <style>
+        /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #34a853;
+    --accent-color: #fbbc05;
+    --dark-color: #202124;
+    --light-color: #f8f9fa;
+    --gray-color: #5f6368;
+    --light-gray: #dadce0;
+    --orange: #FF6600;
+    --dark-orange: #E65C00;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dark-orange);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* Mobile Contact - Hidden on Desktop */
+.mobile-contact {
+    display: none;
+}
+
+.mobile-call-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+/* Desktop Navbar - Visible by Default */
+.navbar {
+    display: block;
+}
+
+.navbar-top {
+    display: none; /* Only for mobile */
+}
+
+.navbar-list {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.navbar-item {
+    position: relative;
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: var(--transition);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.navbar-link ion-icon {
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.navbar-link:hover ion-icon {
+    transform: translateX(3px);
+}
+
+/* Hide mobile-specific menu items on desktop */
+.mobile-menu-contact {
+    display: none;
+}
+
+/* Desktop Contact Info */
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.contact-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.contact-number {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.contact-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Nav Toggle Button - Hidden on Desktop */
+.nav-open-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Overlay - Hidden on Desktop */
+.overlay {
+    display: none;
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    padding: 0 20px;
+}
+
+.contact-hero-content {
+    max-width: 800px;
+}
+
+.contact-hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contact Container */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Contact Sections */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-section.light {
+    background-color: var(--light-color);
+}
+
+.contact-section.gray {
+    background-color: #f5f7fa;
+}
+
+/* Contact Info Cards */
+.contact-info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.contact-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(26, 115, 232, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.contact-icon i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.contact-card p {
+    color: var(--gray-color);
+    margin-bottom: 15px;
+}
+
+.contact-card a {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.contact-card a:hover {
+    color: var(--secondary-color);
+}
+
+/* Contact Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+/* Contact Form */
+.contact-form-container {
+    background: white;
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-form-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-form-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.contact-form-container p {
+    color: var(--gray-color);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Rubik', sans-serif;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Contact Details */
+.contact-details {
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-details h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-details h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* Map Container */
+.map-container {
+    height: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f5f7fa, #e4e7eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.map-placeholder:hover {
+    background: linear-gradient(45deg, #e4e7eb, #d1d5db);
+}
+
+.map-placeholder i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.map-placeholder p {
+    color: var(--gray-color);
+}
+
+/* Detail Items */
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(26, 115, 232, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.detail-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.detail-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+.detail-content p {
+    color: var(--gray-color);
+    margin-bottom: 5px;
+}
+
+.detail-content a {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.detail-content a:hover {
+    color: var(--secondary-color);
+}
+
+/* Business Hours */
+.business-hours {
+    margin-top: 40px;
+}
+
+.business-hours h4 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.hours-table {
+    width: 100%;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.hours-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.hours-row.day {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.hours-row.time {
+    color: var(--gray-color);
+}
+
+/* FAQ Section */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.faq-question {
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background-color: rgba(26, 115, 232, 0.05);
+}
+
+.faq-question i {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.faq-answer {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    color: var(--gray-color);
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 30px 25px;
+    max-height: 500px;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+/* CTA Section */
+.contact-cta {
+    text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(rgba(26, 115, 232, 0.9), rgba(52, 168, 83, 0.9)), url('https://images.unsplash.com/photo-1562887189-e5d078343de4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-cta h2 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.contact-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.btn:hover {
+    background-color: #0d62d9;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #2a9845;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* Back to Top Button */
+.back-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.back-top-btn.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-info-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-section {
+        padding: 60px 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-cta h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Responsive Design - Mobile (768px and below) */
+@media (max-width: 768px) {
+    /* Show mobile navigation toggle button */
+    .nav-open-btn {
+        display: block;
+    }
+    
+    /* Hide desktop contact info on mobile */
+    .header-contact {
+        display: none;
+    }
+    
+    /* Show mobile contact button */
+    .mobile-contact {
+        display: block;
+    }
+    
+    /* Hide desktop navbar on mobile */
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100%;
+        background-color: white;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        transition: var(--transition);
+        overflow-y: auto;
+    }
+    
+    .navbar.active {
+        right: 0;
+    }
+    
+    .navbar-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: var(--dark-orange);
+        color: white;
+    }
+    
+    .navbar-top .logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .navbar-list {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+    }
+    
+    .navbar-item {
+        width: 100%;
+        border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .navbar-link {
+        color: var(--dark-color);
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+    
+    .navbar-link:hover,
+    .navbar-link.active {
+        background-color: rgba(26, 115, 232, 0.05);
+        color: var(--primary-color);
+    }
+    
+    .navbar-link:hover::after,
+    .navbar-link.active::after {
+        display: none;
+    }
+    
+    /* Show mobile phone in menu */
+    .mobile-menu-contact {
+        display: block;
+        background-color: var(--primary-color);
+        color: white;
+        margin-top: 20px;
+    }
+    
+    .phone-link {
+        display: block;
+        padding: 15px 20px;
+        color: white;
+    }
+    
+    .phone-number {
+        display: block;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+    
+    /* Overlay for mobile menu */
+    .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
+    
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Contact page responsive styles */
+    .contact-info-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .contact-form-container,
+    .contact-details {
+        padding: 30px 20px;
+    }
+    
+    .contact-hero {
+        height: 50vh;
+        margin-top: 70px;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .contact-cta {
+        padding: 70px 0;
+    }
+    
+    .contact-cta h2 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-cta p {
+        font-size: 1.1rem;
+    }
+    
+    .faq-question {
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 20px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px;
+    }
+}
+
+/* Responsive Design - Small Mobile */
+@media (max-width: 576px) {
+    .contact-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-hero p {
+        font-size: 1rem;
+    }
+    
+    .contact-cta {
+        padding: 50px 0;
+    }
+    
+    .contact-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-cta p {
+        font-size: 1rem;
+    }
+    
+    .hours-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .contact-hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .contact-card {
+        padding: 30px 20px;
+    }
+    
+    .contact-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .contact-icon i {
+        font-size: 2rem;
+    }
+    
+    .navbar {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>
+                <a href="index.html" class="logo">SBS Xpress Cargo</a>
+            </h1>
+
+            <!-- Mobile Phone Display -->
+            <div class="mobile-contact">
+                <a href="tel:+918433667514" class="mobile-call-btn" aria-label="Call SBS Xpress Cargo">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+
+            <nav class="navbar">
+                <div class="navbar-top">
+                    <a href="index.html" class="logo">SBS Xpress Cargo</a>
+                    <button class="nav-close-btn" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link">
+                            <span>Home</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="about.html" class="navbar-link">
+                            <span>About</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="service.html" class="navbar-link">
+                            <span>Services</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="blog.html" class="navbar-link">
+                            <span>Blog</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="contact.html" class="navbar-link active">
+                            <span>Contact</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+                    <!-- Mobile Phone in Menu -->
+                    <li class="navbar-item mobile-menu-contact">
+                        <a href="tel:+918433667514" class="navbar-link phone-link">
+                            <span>Call Us Now</span>
+                            <span class="phone-number">+91 8433667514</span>
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Desktop Contact -->
+            <div class="header-contact">
+                <div>
+                    <p class="contact-label">Free Call In India</p>
+                    <a href="tel:+918433667514" class="contact-number">+91 8433667514</a>
+                </div>
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+            </div>
+
+            <button class="nav-open-btn" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Get In Touch With Us</h1>
+            <p>We're here to help with all your cargo and logistics needs. Contact us for quotes, support, or any
+                questions about our services.</p>
+            <a href="#contact-form" class="btn btn-secondary">Send Message</a>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-section light">
+        <div class="contact-container">
+            <div class="text-center">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">How Can We Help You?</h2>
+                <p style="color: var(--gray-color); max-width: 700px; margin: 0 auto 40px;">Choose the most convenient
+                    way to reach out to our team</p>
+            </div>
+
+            <div class="contact-info-cards" id="send">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Speak directly with our customer service team</p>
+                    <a href="tel:+918433667514">+91 8433667514</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>Send us your queries or documents</p>
+                    <a href="mailto:info@sbsxpresscargo.com">info@sbsxpresscargo.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Visit our main office during business hours</p>
+                    <a href="#map">View Location</a>
+                </div>
+            </div>
+
+            <!-- Contact Form & Details Grid -->
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container" id="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="tracking">Tracking Inquiry</option>
+                                <option value="service">Service Information</option>
+                                <option value="support">Customer Support</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control"
+                                placeholder="Please provide details about your inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%; padding: 15px; font-size: 1.1rem;">
+                            Send Message <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Details & Map -->
+                <div class="contact-details">
+                    <h2>Our Location & Details</h2>
+
+                    <!-- Map -->
+                    <div class="map-container" id="map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Interactive Map Location</p>
+                            <small>Click to open in Google Maps</small>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Head Office Address</h4>
+                            <p>SBS Xpress Cargo</p>
+                            <p>Logistics Hub, Transport Nagar</p>
+                            <p>Mumbai, Maharashtra 400001</p>
+                            <p>India</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Phone Numbers</h4>
+                            <p><a href="tel:+918433667514">+91 8433667514</a> (Customer Service)</p>
+                            <p><a href="tel:+912222334455">+91 22 2233 4455</a> (Office)</p>
+                            <p><a href="tel:+919876543210">+91 98765 43210</a> (Emergency)</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="detail-content">
+                            <h4>Email Addresses</h4>
+                            <p><a href="mailto:info@sbsxpresscargo.com">info@sbsxpresscargo.com</a></p>
+                            <p><a href="mailto:support@sbsxpresscargo.com">support@sbsxpresscargo.com</a></p>
+                            <p><a href="mailto:quotes@sbsxpresscargo.com">quotes@sbsxpresscargo.com</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <div class="hours-table">
+                            <div class="hours-row">
+                                <div class="day">Monday - Friday</div>
+                                <div class="time">8:00 AM - 8:00 PM</div>
+                            </div>
+                            <div class="hours-row">
+                                <div class="day">Saturday</div>
+                                <div class="time">9:00 AM - 6:00 PM</div>
+                            </div>
+                            <div class="hours-row">
+                                <div class="day">Sunday</div>
+                                <div class="time">10:00 AM - 4:00 PM</div>
+                            </div>
+                            <div class="hours-row">
+                                <div class="day">Emergency Support</div>
+                                <div class="time">24/7 Available</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-section gray">
+        <div class="contact-container">
+            <div class="text-center">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Frequently Asked Questions</h2>
+                <p style="color: var(--gray-color); max-width: 700px; margin: 0 auto 40px;">Find quick answers to common
+                    questions about our services</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to get a shipping quote?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically provide shipping quotes within 2-4 business hours during regular business days.
+                            For urgent requests, you can call us directly at +91 8433667514 for immediate assistance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you serve?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide cargo services across all major cities in India including Mumbai, Delhi,
+                            Bangalore, Chennai, Kolkata, Hyderabad, and Pune. We also offer international shipping
+                            services to select countries.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I track my shipment?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can track your shipment using the tracking number provided at the time of booking. Visit
+                            our tracking page or call our customer service for real-time updates on your shipment
+                            status.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What documents are required for shipping?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Required documents vary based on the type of shipment. Generally, you'll need a
+                            government-issued ID, address proof, and details of the items being shipped. Our team will
+                            guide you through the specific requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer insurance for shipments?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer comprehensive insurance options for all types of shipments. Insurance coverage
+                            can be customized based on the value and nature of your goods. Contact our team for detailed
+                            information about insurance plans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="contact-container">
+            <h2>Need Immediate Assistance?</h2>
+            <p>Our customer support team is available 24/7 to help with urgent shipping needs, tracking inquiries, and
+                emergency situations.</p>
+            <div>
+                <a href="tel:+918433667514" class="btn" style="margin-right: 15px;">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Call Now
+                </a>
+                <a href="mailto:support@sbsxpresscargo.com" class="btn btn-outline">
+                    <i class="fas fa-envelope" style="margin-right: 8px;"></i> Email Support
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SBS Xpress Cargo</h3>
+                <p>Reliable logistics and cargo services across India and beyond. Fast, secure, and efficient delivery
+                    solutions for all your shipping needs.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="tracking.html">Track Shipment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="service.html#air">Air Freight</a></li>
+                    <li><a href="service.html#sea">Sea Freight</a></li>
+                    <li><a href="service.html#land">Land Transport</a></li>
+                    <li><a href="service.html#warehouse">Warehousing</a></li>
+                    <li><a href="service.html#customs">Customs Clearance</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Mumbai, India</li>
+                    <li><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 8433667514</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> info@sbsxpresscargo.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 SBS Xpress Cargo. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-top-btn" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const navOpenBtn = document.querySelector('.nav-open-btn');
+        const navCloseBtn = document.querySelector('.nav-close-btn');
+        const navbar = document.querySelector('.navbar');
+        const overlay = document.querySelector('.overlay');
+
+        navOpenBtn.addEventListener('click', () => {
+            navbar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        navCloseBtn.addEventListener('click', () => {
+            navbar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        overlay.addEventListener('click', () => {
+            navbar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.navbar-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (!firstName || !lastName || !email || !phone || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Here you would normally send the data to a server
+            // For demo purposes, we'll just show a success message
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                alert('Thank you, ' + firstName + '! Your message has been sent successfully. We will get back to you within 24 hours.');
+
+                // Reset form
+                this.reset();
+
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+
+        // Interactive Map Click
+        document.querySelector('.map-placeholder').addEventListener('click', function () {
+            // This would normally open Google Maps with your location
+            const address = encodeURIComponent('SBS Xpress Cargo, Logistics Hub, Transport Nagar, Mumbai, Maharashtra 400001, India');
+            window.open(`https://www.google.com/maps/search/?api=1&query=${address}`, '_blank');
+
+            // Show message
+            this.innerHTML = `
+                <i class="fas fa-external-link-alt"></i>
+                <p>Opening Google Maps...</p>
+                <small>Location: Mumbai, India</small>
+            `;
+        });
+
+        // Back to Top Button
+        const backTopBtn = document.querySelector('.back-top-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backTopBtn.classList.add('active');
+            } else {
+                backTopBtn.classList.remove('active');
+            }
+        });
+
+        backTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) value = value.substring(0, 10);
+
+            // Format as Indian phone number
+            if (value.length > 0) {
+                if (value.length <= 5) {
+                    value = value.replace(/(\d{5})/, '$1');
+                } else {
+                    value = value.replace(/(\d{5})(\d{0,5})/, '$1 $2');
+                }
+            }
+
+            e.target.value = value;
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+
+                // Skip if it's just "#" or external link
+                if (href === '#' || href.startsWith('http')) return;
+
+                e.preventDefault();
+
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
